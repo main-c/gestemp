@@ -26,10 +26,10 @@ class Niveau(models.Model):
 
 
 class Classe(models.Model):
-    name = models.CharField(max_length=50, editable=False, null=False)
+    name = models.CharField(max_length=50, null=False)
     capacite = models.IntegerField(null=False)
     code = models.CharField(
-        max_length=10, editable=False, null=False, unique=True
+        max_length=10, null=False, unique=True
     )
     filiere = models.ForeignKey(Filiere, on_delete=models.CASCADE)
     niveau = models.ForeignKey(Niveau, on_delete=models.CASCADE)
