@@ -4,7 +4,7 @@ from .groupe import Groupe
 from .responsable import Enseignant
 from .cours import Cours
 from .salle import Salle
-from .administrateur import Administrateur
+from .user import User
 
 
 class Programmation(models.Model):
@@ -18,7 +18,7 @@ class Programmation(models.Model):
 
     date_creation = models.DateTimeField(auto_now=True)
     date_modification = models.DateTimeField(auto_now_add=True)
-    cree_par = models.ForeignKey(Administrateur, on_delete=models.CASCADE)
+    cree_par = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Programmation"
