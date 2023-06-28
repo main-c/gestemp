@@ -26,5 +26,5 @@ urlpatterns = [
     path("api/", include("gestemp.api_urls")),
 ]
 
-if config("PROD", "False") == "False":
+if config("PROD", "False") == "True":
     urlpatterns += staticfiles_urlpatterns()
