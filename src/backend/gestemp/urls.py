@@ -16,9 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+from decouple import config
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include("gestemp.api_urls")),
+    path("admin/", admin.site.urls),
+    path("api/", include("gestemp.api_urls")),
 ]
+
+if config("PROD", "False") == "False":
+    urlpatterns += staticfiles_urlpatterns()
