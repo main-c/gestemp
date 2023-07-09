@@ -12,6 +12,7 @@ router.register("niveaux", api_views.NiveauViewSet, basename="niveaux")
 
 router.register("salles", api_views.SalleViewSet, basename="salles")
 router.register("teachers", api_views.EnseignantViewSet, basename="teachers")
+router.register("cours", api_views.CoursViewSet, basename="cours")
 
 
 urlpatterns = [
