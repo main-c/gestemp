@@ -5,7 +5,16 @@ from gestion.models.groupe import Groupe
 from gestion.models.salle import Salle
 from gestion.models.responsable import Enseignant
 from gestion.models.classe import Classe, Niveau, Filiere
+from gestion.models.cours import Cours
 
+class CoursSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cours
+        fields = (
+            'id',
+            'titre',
+            'code',
+        )
 
 class FiliereSerializer(serializers.ModelSerializer):
     class Meta:

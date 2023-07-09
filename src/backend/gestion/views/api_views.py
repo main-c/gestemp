@@ -7,7 +7,7 @@ from gestion.models.groupe import Groupe
 from gestion.models.salle import Salle
 from gestion.models.responsable import Enseignant, Responsable
 from gestion.serializers.users_serializers import EnseignantSerializer, EnseignantDetailSerializer
-from gestion.serializers.inline_serializers import FiliereSerializer, NiveauSerializer, ClassSerializer, GroupSerializer, SalleSerializer, GroupDetailSerializer, ClassDetailSerializer
+from gestion.serializers.inline_serializers import FiliereSerializer, NiveauSerializer, ClassSerializer, GroupSerializer, SalleSerializer, GroupDetailSerializer, ClassDetailSerializer, Cours, CoursSerializer
 from rest_framework.permissions import SAFE_METHODS
 
 SAFE_ACTIONS = ['list', 'retrieve', 'get']
@@ -53,3 +53,7 @@ class EnseignantViewSet(viewsets.ModelViewSet):
 class SalleViewSet(viewsets.ModelViewSet):
     serializer_class = SalleSerializer
     queryset = Salle.objects.all()
+
+class CoursViewSet(viewsets.ModelViewSet):
+    serializer_class = CoursSerializer
+    queryset = Cours.objects.all()
